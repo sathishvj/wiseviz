@@ -1,3 +1,14 @@
-<div>
-	<h2 >This is the about page</h2>
+<div ng-controller="AboutCtrl">
+	<h3 >Visualization Possibilities ... </h3>
+	<p></p>
+
+	<div class="row">
+		<div ng-grid="abtGridOptions" class="abtGridStyle">
+		</div>
+	</div>
+
+	<div class="row">
+		<input type="button" value="click" onclick="showreel()">
+		<div id="showreel"></div>
+	</div>
 </div>

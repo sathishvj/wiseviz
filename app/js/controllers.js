@@ -52,6 +52,6 @@ angular.module('myApp.controllers', [])
   .controller('GridCtrl', [function() {
 
   }])
-  .controller('AboutCtrl', [function() {
-
+  .controller('AboutCtrl', ["$scope", function($scope) {
+		$scope.current = "";
   }]);
