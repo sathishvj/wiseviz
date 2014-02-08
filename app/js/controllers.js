@@ -1,6 +1,6 @@
 'use strict';
 
-/** Controllers **/
+/* Controllers */
 
 angular.module('myApp.controllers', [])
     .controller('NavCtrl', ["$scope", "$http", "$location", '$route', function ($scope, $http, $location, optionsService, $route ) {
@@ -32,7 +32,21 @@ angular.module('myApp.controllers', [])
         };
 
   }])
-  .controller('MainCtrl', [function() {
+  .controller('MainCtrl', ["$scope", function($scope) {
+  	$scope.showOverlay = false;
+  	$scope.showChart = function(chartType){
+  		$scope.showOverlay = true;
+  		d3.select(".chart").select('svg').remove();
+  		console.log("showChart", chartType);
+  		switch(chartType){
+  			case 'linechart':
+  				lineChart();
+  				break;
+  		}
+  	}
+  	$scope.hideChart = function(){
+  		$scope.showOverlay = false;
+  	}
 
   }])
   .controller('GridCtrl', [function() {

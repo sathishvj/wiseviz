@@ -106,3 +106,16 @@ body {
 	height: 100%;
 }
 
+.chartarea{
+  position: absolute;
+  width: 500px;
+  top: 100px;
+  height: 400px;
+  left: 250px;
+  border: 1px solid #333;
+}
+.close{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
