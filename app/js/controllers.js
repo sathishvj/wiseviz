@@ -1,6 +1,6 @@
 'use strict';
 
-/* Controllers */
+/** Controllers **/
 
 angular.module('myApp.controllers', [])
     .controller('NavCtrl', ["$scope", "$http", "$location", '$route', function ($scope, $http, $location, optionsService, $route ) {
