@@ -1,4 +1,4 @@
-var drawPieChart = function(filename) {
+var drawDonutChart = function(filename) {
 	var width = 960,
 		height = 500,
 		radius = Math.min(width, height) / 2;
@@ -8,7 +8,7 @@ var drawPieChart = function(filename) {
 
 	var arc = d3.svg.arc()
 		.outerRadius(radius - 10)
-		.innerRadius(0);
+		.innerRadius(radius - 70);
 
 	var pie = d3.layout.pie()
 		.sort(null)
@@ -44,4 +44,4 @@ var drawPieChart = function(filename) {
 		  .text(function(d) { return d.data.age; });
 
 	});
-}
+};

@@ -56,10 +56,10 @@ angular.module('myApp.controllers', [])
 		};
 
 	  $scope.inputDataList = [
-		  {title: "Age-Population", file:"files/age-population.csv", cols: ["nominal", "number" ]},
-		  {title: "Apple Stock Price", file:"files/apple-stock-price.tsv", cols: ["ordinal", "number" ]},
-		  {title: "Browser Market Share", file:"files/browser-market-share.tsv", cols: ["nominal", "number", "number", "number", "number", "number" ]},
-		  {title: "Daily Average Temperatures", file:"files/daily-avg-temperatures.tsv", cols: ["ordinal", "number", "number", "number"]},
+		  {title: "Age-Population (Pie, Donut)", file:"files/age-population.csv", cols: ["nominal", "number" ]},
+		  {title: "Apple Stock Price (Line, Area)", file:"files/apple-stock-price.tsv", cols: ["ordinal", "number" ]},
+		  {title: "Browser Market Share (Stacked Area)", file:"files/browser-market-share.tsv", cols: ["nominal", "number", "number", "number", "number", "number" ]},
+		  {title: "Daily Average Temperatures (Multiseries Line)", file:"files/daily-avg-temperatures.tsv", cols: ["ordinal", "number", "number", "number"]},
 		  {title: "Daily High-Low Temperatures", file:"files/daily-high-low-temp.tsv", cols: ["ordinal", "number", "number"]},
 		  {title: "Letter Frequency", file:"files/letter-frequency.tsv", cols: ["nominal", "number" ]},
 		  {title: "Population by State by Age Group", file:"files/populations-by-state.csv", cols: ["nominal", "number", "number", "number", "number", "number", "number", "number"]},
@@ -152,6 +152,21 @@ angular.module('myApp.controllers', [])
 		  switch(name) {
 			  case "pie":
 				  drawPieChart($scope.chosenInputData.file);
+				  break;
+			  case "donut":
+				  drawDonutChart($scope.chosenInputData.file);
+				  break;
+			  case "line":
+				  drawLineChart($scope.chosenInputData.file);
+				  break;
+			  case "stacked-area":
+				  drawStackedAreaChart($scope.chosenInputData.file);
+				  break;
+			  case "area":
+				  drawAreaChart($scope.chosenInputData.file);
+				  break;
+			  case "multiseries-line":
+				  drawMultiseriesLineChart($scope.chosenInputData.file);
 				  break;
 		  }
 	  }
