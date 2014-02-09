@@ -62,8 +62,8 @@ angular.module('myApp.controllers', [])
 		  {title: "Daily Average Temperatures (Multiseries Line)", file:"files/daily-avg-temperatures.tsv", cols: ["ordinal", "number", "number", "number"]},
 		  {title: "Daily High-Low Temperatures", file:"files/daily-high-low-temp.tsv", cols: ["ordinal", "number", "number"]},
 		  {title: "Letter Frequency (Bar)", file:"files/letter-frequency.tsv", cols: ["nominal", "number" ]},
-		  {title: "Population by State by Age Group", file:"files/populations-by-state.csv", cols: ["nominal", "number", "number", "number", "number", "number", "number", "number"]},
-		  {title: "Temp Diff NY-SFO", file:"files/temp-diff-ny-sfo.tsv", cols: ["ordinal", "number", "number" ]}
+		  {title: "Population by State by Age Group (Normalized/Stacked Bar)", file:"files/populations-by-state.csv", cols: ["nominal", "number", "number", "number", "number", "number", "number", "number"]}
+		  //{title: "Temp Diff NY-SFO", file:"files/temp-diff-ny-sfo.tsv", cols: ["ordinal", "number", "number" ]}
 		  ];
 
 	  $scope.chosenInputData = "";
@@ -116,7 +116,7 @@ angular.module('myApp.controllers', [])
 	  	{name: "normalized-stacked-bar", img: "img/normalized-stacked-bar-chart.png", active: false, cols: ["nominal", "number", "number", "number", "number", "number", "number", "number"]},
 	  	{name: "pie", img: "img/pie-chart.png", active: false, cols: ["nominal", "number"]},
 	  	{name: "stacked-area", img: "img/stacked-area-chart.png", active: false, cols: ["nominal", "number", "number", "number", "number", "number"]},
-	  	{name: "stacked-bar", img: "img/stacked-bar-chart.png", active: false, cols: ["ordinal", "number", "number", "number", "number", "number"]}
+	  	{name: "stacked-bar", img: "img/stacked-bar-chart.png", active: false, cols: ["nominal", "number", "number", "number", "number", "number", "number", "number"]}
 	  ];
 
 	  $scope.updateVizList = function(val) {
@@ -173,6 +173,12 @@ angular.module('myApp.controllers', [])
 				  break;
 			  case "bivariate-area":
 				  drawBivariateAreaChart($scope.chosenInputData.file);
+				  break;
+			  case "stacked-bar":
+				  drawStackedBarChart($scope.chosenInputData.file);
+				  break;
+			  case "normalized-stacked-bar":
+				  drawNormalizedStackedBarChart($scope.chosenInputData.file);
 				  break;
 		  }
 	  }
