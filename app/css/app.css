@@ -173,3 +173,19 @@ body {
 	stroke: #fff;
 }
 
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.area {
+	fill: steelblue;
+}
+
+.line {
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
