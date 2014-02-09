@@ -5,7 +5,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
-  min-width: 760px;
 }
 
 
@@ -91,24 +90,28 @@ body {
 }
 
 #dataSelector {
-	width: 80%;
+	width: 90%;
 	margin: 10px;
 }
 
 .vizcol {
 	height: 100%;
-	background-color: azure;
+	/*background-color: azure;*/
+	background-color: aliceblue;
     position: fixed;
     top: 50px;
     left: 0;
     bottom: 0;
     display: block;
+	overflow: scroll;
+	
 }
 
 .gridStyle {
 	border: 2px solid rgb(212,212,212);
 	width: 100%; 
 	height: 100%;
+	padding-bottom: 10px;
 }
 
 .chartarea{
@@ -129,3 +132,44 @@ body {
 .abtGridStyle {
 
 }
+
+.vizThumbnailBox {
+	/*width: 219px;*/
+	/*height: 143px;*/
+	margin: 10px;
+	background-color: white;
+	border: 1px solid lightgreen;
+	cursor: pointer;
+}
+
+.vizGrayedOut {
+	border: 1px solid darkgray;
+	cursor: default;
+}
+
+.masker {
+	opacity: 0.2;
+    /* filter: alpha(opacity=40);  msie */
+    /*background-color: #000;*/
+}
+
+.masker img {
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+#bigChartArea input {
+	margin: 10px;
+}
+
+#bigChart {
+	height: 640px;
+	width: 1000px;
+	border: 1px dashed blue;
+}
+
+.arc path {
+	stroke: #fff;
+}
+

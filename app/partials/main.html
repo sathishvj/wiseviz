@@ -1,6 +1,6 @@
 	<!--<script type="text/javascript" src="../js/charts/linechart.js"></script>-->
-	<div class="row">
-		<div class="col-sm-4 col-md-4 datacol" ng-controller="GridCtrl" >
+	<div class="row" ng-controller="GridVizCtrl">
+		<div class="col-sm-4 col-md-4 datacol" >
 			<h3 class="page-header">Data</h3>
 			<div class="row">
 				<select id="dataSelector" ng-model="chosenInputData" ng-options="inputData as inputData.title for inputData in inputDataList">
@@ -11,13 +11,27 @@
 			</div>
 		</div>
 		<!--<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 vizcol">-->
-		<div class="col-sm-8 col-md-8 col-sm-offset-4 col-md-offset-4 vizcol">
+		<div class="col-sm-8 col-md-8 col-sm-offset-4 col-md-offset-4 vizcol" >
 			<h3 class="page-header">Wise Visualizations</h3>
-			<a ng-click="showChart('linechart');">Line Chart</a>
+			<!--<a ng-click="showChart('linechart');">Line Chart</a>-->
+			<div ng-show="!showBigChart">
+				<div class="vizThumbnailBox col-sm-3 col-md-3" ng-class="{vizGrayedOut: oneViz.active===false}" ng-repeat="oneViz in vizList" ng-click="oneViz.active && drawChart(oneViz.name)">
+					<div ng-class="{masker: oneViz.active===false}" class="text-center">
+						<img ng-src="{{oneViz.img}}">
+					</div>
+				</div>
+			</div>
+			<div id="bigChartArea" ng-show="showBigChart">
+				<input type="button" value="Close" ng-click="showBigChart = false">
+				<div id="bigChart">
+				</div>
+			</div>
 			
 		</div>
 	</div>
+	<!--
 	<div class="slide-top chartarea" ng-show="showOverlay">
 		<div class="close" ng-click="hideChart();">Close</div>
 		<div class="chart">Hello</div>
 	</div>
+	-->
