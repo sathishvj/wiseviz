@@ -61,7 +61,7 @@ angular.module('myApp.controllers', [])
 		  {title: "Browser Market Share (Stacked Area)", file:"files/browser-market-share.tsv", cols: ["nominal", "number", "number", "number", "number", "number" ]},
 		  {title: "Daily Average Temperatures (Multiseries Line)", file:"files/daily-avg-temperatures.tsv", cols: ["ordinal", "number", "number", "number"]},
 		  {title: "Daily High-Low Temperatures", file:"files/daily-high-low-temp.tsv", cols: ["ordinal", "number", "number"]},
-		  {title: "Letter Frequency", file:"files/letter-frequency.tsv", cols: ["nominal", "number" ]},
+		  {title: "Letter Frequency (Bar)", file:"files/letter-frequency.tsv", cols: ["nominal", "number" ]},
 		  {title: "Population by State by Age Group", file:"files/populations-by-state.csv", cols: ["nominal", "number", "number", "number", "number", "number", "number", "number"]},
 		  {title: "Temp Diff NY-SFO", file:"files/temp-diff-ny-sfo.tsv", cols: ["ordinal", "number", "number" ]}
 		  ];
@@ -167,6 +167,12 @@ angular.module('myApp.controllers', [])
 				  break;
 			  case "multiseries-line":
 				  drawMultiseriesLineChart($scope.chosenInputData.file);
+				  break;
+			  case "bar":
+				  drawBarChart($scope.chosenInputData.file);
+				  break;
+			  case "bivariate-area":
+				  drawBivariateAreaChart($scope.chosenInputData.file);
 				  break;
 		  }
 	  }
