@@ -31,7 +31,8 @@ function lineChart()
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   d3.tsv("/files/data.tsv", function(error, data) {
-    console.log(csvColumnTypes(data));
+    //console.log(csvColumnTypes(data));
+    console.log(get_ocn(data));
     data.forEach(function(d) {
 
       d.date = parseDate(d.date);

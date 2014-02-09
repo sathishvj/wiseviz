@@ -121,3 +121,13 @@ function returnMaxKey(obj, max)
 		}
 	}
 }
+function get_ocn(data)
+{
+	var finaltypes = csvColumnTypes(data);
+	var ocn = new Array();
+	for(i=0; i<finaltypes.length); i++)
+	{
+		ocn.push(finaltypes[i][1]);
+	}
+	return ocn;
+}
